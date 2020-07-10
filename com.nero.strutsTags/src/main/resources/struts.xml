@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+    <constant name="struts.devMode" value="false"/>
+    <constant name="struts.custom.i18n.resources" value="mess"/>
+    <constant name="struts.enable.SlashesInActionNames" value="true"/>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+
+    <package name="base" extends="struts-default" abstract="true">
+        <interceptors>
+            <interceptor-stack name="appDefaultStack">
+                <interceptor-ref name="defaultStack">
+                    <param name="exception.logEnabled">true</param>
+                    <param name="exception.logLevel">ERROR</param>
+                </interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+        <default-interceptor-ref name="appDefaultStack"/>
+        <global-results>
+            <result name="err">/WEB-INF/jsp/err.jsp</result>
+        </global-results>
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="err"/>
+        </global-exception-mappings>
+    </package>
+    <package name="jsp" namespace="/jsp" extends="base">
+        <action name="*">
+            <result>/WEB-INF/jsp/{1}.jsp</result>
+        </action>
+    </package>
+    <package name="strutstags" extends="base">
+        <action name="adduser">
+            <result>/WEB-INF/jsp/AddUser.jsp</result>
+        </action>
+        <action name="helloworld" class="com.nero.strutsTags.action.HelloWorldAction" method="execute">
+            <result name="success">/WEB-INF/jsp/helloworld.jsp</result>
+            <result name="error">/WEB-INF/jsp/UserInfo.jsp</result>
+            <allowed-methods>gerErr</allowed-methods>
+        </action>
+        <action name="useradd" class="com.nero.strutsTags.action.user.AddAction">
+            <result name="success">/WEB-INF/jsp/UserInfo.jsp</result>
+            <result name="input">/WEB-INF/jsp/AddUser.jsp</result>
+        </action>
+        <action name="login" class="com.nero.strutsTags.action.LoginAction">
+            <result name="success">/WEB-INF/jsp/UserInfo.jsp</result>
+            <result name="input">/WEB-INF/jsp/Login.jsp</result>
+        </action>
+        <action name="createImageAction" class="com.nero.strutsTags.action.CreateImageAction">
+            <result name="success" type="stream">
+                <param name="contentType">image/jpeg</param>
+                <param name="inputName">inputStream</param>
+            </result>
+        </action>
+        <action name="loginForm">
+            <result>/WEB-INF/jsp/Login.jsp</result>
+        </action>
+
+    </package>
+
+</struts>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/basic-struts" />
+    <file type="web" url="file://$PROJECT_DIR$/com.nero.basic_struts_noMaven/out/artifacts/com_nero_basic_struts_noMaven_war_exploded/WEB-INF/web.xml" />
+    <file type="web" url="file://$PROJECT_DIR$/com.nero.struts.cims" />
+    <file type="web" url="file://$PROJECT_DIR$/com.nero.strutsTags" />
+    <file type="web" url="file://$PROJECT_DIR$/helloworld" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/com.nero.basic_struts/pom.xml" />
+        <option value="$PROJECT_DIR$/com.nero.helloworld/pom.xml" />
+        <option value="$PROJECT_DIR$/basic-struts/pom.xml" />
+        <option value="$PROJECT_DIR$/com.nero.strutsTags/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

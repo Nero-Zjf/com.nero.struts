@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="strutsTags:war">
+    <output-path>$PROJECT_DIR$/com.nero.strutsTags/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>strutsTags</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="strutsTags-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="strutsTags:war exploded" />
+    </root>
+  </artifact>
+</component>
